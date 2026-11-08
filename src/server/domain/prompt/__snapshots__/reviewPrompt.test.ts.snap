@@ -1,0 +1,56 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`renderReviewPrompt with the built-in template > renders the review as Markdown 1`] = `
+"# Code review from revi (review 01REVIEW)
+Repo: /repo (branch \`feat/x\`, base \`origin/main\` @ a1b2c3d, HEAD e4f5a6b)
+
+## Summary
+Please tighten error handling.
+
+## Comments
+
+### [T1] src/api/user.ts:2-3 (new side, merged diff)
+
+\`\`\`diff
+ a
+-b
++B
+ c
+\`\`\`
+
+> This misses the null case.
+
+### [T2] README.md:1 (old side, commit deadbee)
+
+The lines are no longer in the diff. Originally:
+\`\`\`
+a
+\`\`\`
+
+Earlier in this thread:
+
+**user:**
+> Why?
+
+**agent:**
+> Because.
+
+New comment:
+
+> Still unclear.
+
+## How to respond
+Read each comment and decide what it asks for. Not every comment is a change request.
+- It asks for a change: edit the code, then reply with \`--status addressed\`.
+- It asks a question: answer it in the reply without changing the code, with \`--status answered\`.
+- You disagree with the requested change: explain why, with \`--status wontfix\`.
+- You cannot tell what is wanted: ask, with \`--status question\`.
+- Do not commit.
+
+For every thread, reply once when you are done with it:
+  \`revi reply <threadId> --status addressed|answered|wontfix|question --body-file - <<'EOF'\`
+  \`<your reply>\`
+  \`EOF\`
+Thread ids: T1=01THREADA, T2=01THREADB
+"
+`;
