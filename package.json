@@ -1,0 +1,53 @@
+{
+  "name": "revi",
+  "version": "0.1.0",
+  "description": "Review local git branch changes in the browser and send comments to herdr agents",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "bin": {
+    "revi": "dist/cli/main.js"
+  },
+  "engines": {
+    "node": ">=26"
+  },
+  "scripts": {
+    "build": "npm run build:server && npm run build:web",
+    "build:server": "tsc -p tsconfig.build.json",
+    "build:web": "vite build",
+    "dev:web": "vite build --watch",
+    "dev:server": "node --watch src/cli/main.ts",
+    "start": "node src/cli/main.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc -p tsconfig.json && tsc -p tsconfig.web.json",
+    "lint": "eslint .",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "@git-diff-view/react": "0.1.8",
+    "@hono/node-server": "2.1.6",
+    "@tanstack/react-query": "5.107.1",
+    "hono": "4.13.17",
+    "mustache": "4.2.0",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "ulid": "3.0.2",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@types/mustache": "4.2.6",
+    "@types/node": "26.6.6",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.2.1",
+    "eslint": "10.14.0",
+    "eslint-plugin-react-hooks": "7.1.1",
+    "prettier": "3.9.10",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.72.1",
+    "vite": "8.3.6",
+    "vitest": "5.1.0"
+  }
+}

@@ -1,0 +1,5 @@
+dist/
+node_modules/
+doc/
+package-lock.json
+templates/
