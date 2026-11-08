@@ -6,9 +6,10 @@
 
 ## 安裝
 
-需要 Node 26 以上與 git。在這個 repo 的資料夾裡執行：
+需要 Node 26 以上與 git。在這個 repo 的資料夾裡執行（`nvm use` 會依 `.nvmrc` 切到 Node 26）：
 
 ```bash
+nvm use
 npm install
 npm run build
 npm link
